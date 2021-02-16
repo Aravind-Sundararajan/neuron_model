@@ -1,0 +1,328 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ui version="4.0">
+ <class>MainWindow</class>
+ <widget class="QMainWindow" name="MainWindow">
+  <property name="geometry">
+   <rect>
+    <x>0</x>
+    <y>0</y>
+    <width>800</width>
+    <height>568</height>
+   </rect>
+  </property>
+  <property name="windowTitle">
+   <string>MainWindow</string>
+  </property>
+  <widget class="QWidget" name="centralwidget">
+   <widget class="QGroupBox" name="dendrite_plot_group">
+    <property name="geometry">
+     <rect>
+      <x>380</x>
+      <y>260</y>
+      <width>411</width>
+      <height>271</height>
+     </rect>
+    </property>
+    <property name="title">
+     <string>denrite</string>
+    </property>
+   </widget>
+   <widget class="QGroupBox" name="soma_plot_group">
+    <property name="geometry">
+     <rect>
+      <x>380</x>
+      <y>20</y>
+      <width>411</width>
+      <height>231</height>
+     </rect>
+    </property>
+    <property name="title">
+     <string>soma</string>
+    </property>
+   </widget>
+   <widget class="QGroupBox" name="groupBox">
+    <property name="geometry">
+     <rect>
+      <x>10</x>
+      <y>20</y>
+      <width>361</width>
+      <height>141</height>
+     </rect>
+    </property>
+    <property name="title">
+     <string>morphology</string>
+    </property>
+    <widget class="QWidget" name="layoutWidget">
+     <property name="geometry">
+      <rect>
+       <x>10</x>
+       <y>30</y>
+       <width>186</width>
+       <height>101</height>
+      </rect>
+     </property>
+     <layout class="QVBoxLayout" name="verticalLayout">
+      <item>
+       <widget class="QLabel" name="label">
+        <property name="text">
+         <string>soma diameter (micron)</string>
+        </property>
+       </widget>
+      </item>
+      <item>
+       <widget class="QLabel" name="label_2">
+        <property name="text">
+         <string>dendrite length (micron)</string>
+        </property>
+       </widget>
+      </item>
+      <item>
+       <widget class="QLabel" name="label_3">
+        <property name="text">
+         <string>dendrite diameter (micron)</string>
+        </property>
+       </widget>
+      </item>
+     </layout>
+    </widget>
+    <widget class="QLineEdit" name="edit_dendrite_diameter">
+     <property name="geometry">
+      <rect>
+       <x>220</x>
+       <y>100</y>
+       <width>113</width>
+       <height>25</height>
+      </rect>
+     </property>
+     <property name="text">
+      <string>1</string>
+     </property>
+    </widget>
+    <widget class="QLineEdit" name="edit_soma_diameter">
+     <property name="geometry">
+      <rect>
+       <x>220</x>
+       <y>40</y>
+       <width>113</width>
+       <height>25</height>
+      </rect>
+     </property>
+     <property name="text">
+      <string>12.6157</string>
+     </property>
+    </widget>
+    <widget class="QLineEdit" name="edit_dendrite_length">
+     <property name="geometry">
+      <rect>
+       <x>220</x>
+       <y>70</y>
+       <width>113</width>
+       <height>25</height>
+      </rect>
+     </property>
+     <property name="text">
+      <string>200</string>
+     </property>
+    </widget>
+   </widget>
+   <widget class="QGroupBox" name="groupBox_2">
+    <property name="geometry">
+     <rect>
+      <x>10</x>
+      <y>200</y>
+      <width>361</width>
+      <height>291</height>
+     </rect>
+    </property>
+    <property name="title">
+     <string>biophysics</string>
+    </property>
+    <widget class="QWidget" name="layoutWidget">
+     <property name="geometry">
+      <rect>
+       <x>10</x>
+       <y>50</y>
+       <width>230</width>
+       <height>231</height>
+      </rect>
+     </property>
+     <layout class="QVBoxLayout" name="verticalLayout_2">
+      <item>
+       <widget class="QLabel" name="label_4">
+        <property name="text">
+         <string>axial resistance (Ohm * cm)</string>
+        </property>
+       </widget>
+      </item>
+      <item>
+       <widget class="QLabel" name="label_5">
+        <property name="text">
+         <string>membrane capacitance (uF / cm2)</string>
+        </property>
+       </widget>
+      </item>
+      <item>
+       <widget class="QLabel" name="label_6">
+        <property name="text">
+         <string>sodium conductance (S/cm2)</string>
+        </property>
+       </widget>
+      </item>
+      <item>
+       <widget class="QLabel" name="label_7">
+        <property name="text">
+         <string>potassium conductance (S/cm2)</string>
+        </property>
+       </widget>
+      </item>
+      <item>
+       <widget class="QLabel" name="label_8">
+        <property name="text">
+         <string>leak conductance (S/cm2)</string>
+        </property>
+       </widget>
+      </item>
+      <item>
+       <widget class="QLabel" name="label_9">
+        <property name="text">
+         <string>reversal potential (mV)</string>
+        </property>
+       </widget>
+      </item>
+      <item>
+       <widget class="QLabel" name="label_10">
+        <property name="text">
+         <string>passive conductance (S/cm2)</string>
+        </property>
+       </widget>
+      </item>
+      <item>
+       <widget class="QLabel" name="label_11">
+        <property name="text">
+         <string>leak reversal potential (mV)</string>
+        </property>
+       </widget>
+      </item>
+     </layout>
+    </widget>
+    <widget class="QLineEdit" name="edit_leak_reversal_potential">
+     <property name="geometry">
+      <rect>
+       <x>240</x>
+       <y>260</y>
+       <width>113</width>
+       <height>25</height>
+      </rect>
+     </property>
+     <property name="text">
+      <string>-65</string>
+     </property>
+    </widget>
+    <widget class="QLineEdit" name="edit_membrane_capacitance">
+     <property name="geometry">
+      <rect>
+       <x>240</x>
+       <y>80</y>
+       <width>113</width>
+       <height>25</height>
+      </rect>
+     </property>
+     <property name="text">
+      <string>1</string>
+     </property>
+    </widget>
+    <widget class="QLineEdit" name="edit_leak_conductance">
+     <property name="geometry">
+      <rect>
+       <x>240</x>
+       <y>170</y>
+       <width>113</width>
+       <height>25</height>
+      </rect>
+     </property>
+     <property name="text">
+      <string>0.0003</string>
+     </property>
+    </widget>
+    <widget class="QLineEdit" name="edit_reversal_potential">
+     <property name="geometry">
+      <rect>
+       <x>240</x>
+       <y>200</y>
+       <width>113</width>
+       <height>25</height>
+      </rect>
+     </property>
+     <property name="text">
+      <string>-54.3</string>
+     </property>
+    </widget>
+    <widget class="QLineEdit" name="edit_sodium_conductance">
+     <property name="geometry">
+      <rect>
+       <x>240</x>
+       <y>110</y>
+       <width>113</width>
+       <height>25</height>
+      </rect>
+     </property>
+     <property name="text">
+      <string>0.12</string>
+     </property>
+    </widget>
+    <widget class="QLineEdit" name="edit_passive_conductance">
+     <property name="geometry">
+      <rect>
+       <x>240</x>
+       <y>230</y>
+       <width>113</width>
+       <height>25</height>
+      </rect>
+     </property>
+     <property name="text">
+      <string>0.001</string>
+     </property>
+    </widget>
+    <widget class="QLineEdit" name="edit_axial_resistance">
+     <property name="geometry">
+      <rect>
+       <x>240</x>
+       <y>50</y>
+       <width>113</width>
+       <height>25</height>
+      </rect>
+     </property>
+     <property name="text">
+      <string>100</string>
+     </property>
+    </widget>
+    <widget class="QLineEdit" name="edit_potassium_conductance">
+     <property name="geometry">
+      <rect>
+       <x>240</x>
+       <y>140</y>
+       <width>113</width>
+       <height>25</height>
+      </rect>
+     </property>
+     <property name="text">
+      <string>0.036</string>
+     </property>
+    </widget>
+   </widget>
+  </widget>
+  <widget class="QMenuBar" name="menubar">
+   <property name="geometry">
+    <rect>
+     <x>0</x>
+     <y>0</y>
+     <width>800</width>
+     <height>22</height>
+    </rect>
+   </property>
+  </widget>
+  <widget class="QStatusBar" name="statusbar"/>
+ </widget>
+ <resources/>
+ <connections/>
+</ui>
