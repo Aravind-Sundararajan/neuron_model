@@ -86,7 +86,7 @@ class MyMainWindow(QtWidgets.QMainWindow):
         super().__init__(*args)
         fnameUI  = os.path.join( os.path.dirname(__file__), 'neuronmodel.ui' )
         uic.loadUi(fnameUI, self)
-        self.setWindowTitle('NEURON Demo')
+        self.setWindowTitle('NEURON Hodgkin–Huxley model')
 
     def initModel(self):
             self.cell = BallAndStick(0,self)
@@ -101,6 +101,8 @@ class MyMainWindow(QtWidgets.QMainWindow):
             self.canvas_dend = FigureCanvas(self.fig_dend)
             self.dendrite_plot_group.layout.addWidget(self.canvas_dend)
             self.dendrite_plot_group.setLayout(self.dendrite_plot_group.layout)
+            self.ax_dend.set_xlabel('t (ms)')
+            self.ax_dend.set_ylabel('v (mV)')
 
             #Statistics figures
             self.soma_plot_group.layout = QtWidgets.QVBoxLayout()
@@ -109,13 +111,13 @@ class MyMainWindow(QtWidgets.QMainWindow):
             self.canvas_soma = FigureCanvas(self.fig_soma)
             self.soma_plot_group.layout.addWidget(self.canvas_soma)
             self.soma_plot_group.setLayout(self.soma_plot_group.layout)
+            self.ax_soma.set_xlabel('t (ms)')
+            self.ax_soma.set_ylabel('v (mV)')
 
     def plot(self):
         stim = h.IClamp(self.cell.dend(1))
 
         stim.get_segment()
-
-        print(', '.join(item for item in dir(stim) if not item.startswith('__')))
 
         stim.delay = 5
         stim.dur = 1
@@ -128,6 +130,10 @@ class MyMainWindow(QtWidgets.QMainWindow):
         colors = ['green', 'blue', 'red', 'black']
         self.ax_soma.clear()
         self.ax_dend.clear()
+        self.ax_dend.set_xlabel('t (ms)')
+        self.ax_dend.set_ylabel('v (mV)')
+        self.ax_soma.set_xlabel('t (ms)')
+        self.ax_soma.set_ylabel('v (mV)')
         try:
             for amp, color in zip(amps, colors):
                 stim.amp = amp
@@ -158,7 +164,7 @@ if __name__ == '__main__':
 
     app = QApplication(sys.argv)
     window = MyMainWindow()
-    window.setGeometry(400, 400, 800, 600)
+    window.setGeometry(400, 400, 800, 560)
 
     window.show()
 
