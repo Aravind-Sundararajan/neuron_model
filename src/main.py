@@ -9,14 +9,12 @@ QDial, QDialog, QGridLayout, QGroupBox, QHBoxLayout, QLabel, QLineEdit,
 QProgressBar, QPushButton, QRadioButton, QScrollBar, QSizePolicy,
 QSlider, QSpinBox, QStyleFactory, QTableWidget, QTabWidget, QTextEdit,
 QVBoxLayout, QWidget, QFileDialog, QInputDialog)
+
 from matplotlib.backends.backend_qt5agg import FigureCanvasQTAgg as FigureCanvas
 from matplotlib.figure import Figure
 import matplotlib.pyplot as plt
-import numpy as np
-from numpy import genfromtxt
-import csv
+
 import os
-import pandas as pd
 
 class BallAndStick:
     def __init__(self, gid, window):
