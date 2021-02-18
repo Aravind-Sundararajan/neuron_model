@@ -146,7 +146,7 @@ class MyMainWindow(QtWidgets.QMainWindow):
                 self.canvas_soma.draw()
                 self.ax_soma.plot(t, soma_v,color)
 
-            self.ax_dend.legend(["{:.2f} mV".format(elem) for elem in amps])
+            self.ax_dend.legend(["{:.2f}".format(elem) for elem in amps])
         except:
             self.ax_soma.clear()
             self.ax_dend.clear()
